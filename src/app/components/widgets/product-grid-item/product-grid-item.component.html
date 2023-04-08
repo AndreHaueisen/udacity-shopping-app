@@ -1,6 +1,21 @@
 <div class="product-item">
-  <img [src]="product?.url" [alt]="product?.name" width="100%" />
-  <h3>{{ product?.name }}</h3>
-  <p>${{ product?.price }}</p>
-  <p>{{ product?.description }}</p>
+  <img class="product-image" [src]="product?.url" [alt]="product?.name" width="100%" />
+
+  <div class="product-info">
+    <div class="product-name">
+      <h3>{{ product?.name }}</h3>
+    </div>
+
+    <div class="product-price">${{ product?.price }}</div>
+    <div class="product-description">{{ product?.description }}</div>
+
+    <div class="product-actions">
+      <div class="quantity-selector">
+        <button class="quantity-button" [disabled]="quantity < 1" (click)="removeFromCart(product!)">-</button>
+        <div class="quantity-text">{{ quantity }}</div>
+        <button class="quantity-button" (click)="addToCart(product!)">+</button>
+      </div>
+      <button class="add-to-cart-button" (click)="addToCart(product!)">Add to Cart</button>
+    </div>
+  </div>
 </div>
