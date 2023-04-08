@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+import { CartProduct } from 'src/app/models/cart-product';
 import { Product } from 'src/app/models/product';
+import { CartProductsService } from 'src/app/services/cart-products.service';
 import { ProductsService } from 'src/app/services/products.service';
 
 @Component({
@@ -10,9 +12,17 @@ import { ProductsService } from 'src/app/services/products.service';
 export class ProductsGridComponent {
   products: Product[] = [];
 
-  constructor(private productsService: ProductsService) {}
+  constructor(private productsService: ProductsService, readonly cartProductsService: CartProductsService) {}
 
   ngOnInit(): void {
     this.productsService.getProducts().subscribe((products) => (this.products = products));
+  }
+
+  onProductAdded(cartProduct: CartProduct) {
+    this.cartProductsService.addToCart(cartProduct);
+  }
+
+  onProductRemoved(cartProduct: CartProduct) {
+    this.cartProductsService.removeFromCart(cartProduct);
   }
 }

@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { CartProduct } from 'src/app/models/cart-product';
+import { CartProductsService } from 'src/app/services/cart-products.service';
 
 @Component({
   selector: 'app-product-grid-item',
@@ -13,15 +14,23 @@ export class ProductGridItemComponent {
   @Output() removeFromCartEmitter = new EventEmitter<CartProduct>();
   quantity: number = 0;
 
-  constructor() {}
+  constructor(private cartProductsService: CartProductsService) {}
+
+  ngOnInit(): void {
+    this.cartProductsService.subscribeToSingleCartProduct(this.product!.id).subscribe((cartProduct) => {
+      if (cartProduct) {
+        this.quantity = cartProduct.quantity;
+      } else {  
+        this.quantity = 0;
+      }
+    });
+  }
 
   addToCart(product: Product): void {
-    this.quantity += 1;
     this.addToCartEmitter.emit(new CartProduct(product, this.quantity));
   }
 
   removeFromCart(product: Product): void {
-    this.quantity -= 1;
     this.removeFromCartEmitter.emit(new CartProduct(product, this.quantity));
   }
 }

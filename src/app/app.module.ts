@@ -9,6 +9,8 @@ import { ProductsGridComponent } from './components/widgets/products-grid/produc
 import { ProductGridItemComponent } from './components/widgets/product-grid-item/product-grid-item.component';
 import { NavBarComponent } from './components/widgets/nav-bar/nav-bar.component';
 import { CartComponent } from './components/screens/cart/cart.component';
+import { CartProductsListComponent } from './components/widgets/cart-products-list/cart-products-list.component';
+import { CartProductItemComponent } from './components/widgets/cart-product-item/cart-product-item.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,8 @@ import { CartComponent } from './components/screens/cart/cart.component';
     ProductGridItemComponent,
     NavBarComponent,
     CartComponent,
+    CartProductsListComponent,
+    CartProductItemComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
