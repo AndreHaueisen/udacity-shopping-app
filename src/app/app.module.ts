@@ -8,9 +8,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { ProductsGridComponent } from './components/widgets/products-grid/products-grid.component';
 import { ProductGridItemComponent } from './components/widgets/product-grid-item/product-grid-item.component';
 import { NavBarComponent } from './components/widgets/nav-bar/nav-bar.component';
+import { CartComponent } from './components/screens/cart/cart.component';
 
 @NgModule({
-  declarations: [AppComponent, StoreFrontComponent, ProductsGridComponent, ProductGridItemComponent, NavBarComponent],
+  declarations: [
+    AppComponent,
+    StoreFrontComponent,
+    ProductsGridComponent,
+    ProductGridItemComponent,
+    NavBarComponent,
+    CartComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
