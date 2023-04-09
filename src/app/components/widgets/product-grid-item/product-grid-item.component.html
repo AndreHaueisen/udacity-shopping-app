@@ -11,11 +11,11 @@
 
     <div class="product-actions">
       <div class="quantity-selector">
-        <button class="quantity-button" [disabled]="quantity < 1" (click)="removeFromCart(product!)">-</button>
+        <button class="quantity-button" [disabled]="quantity < 1" (click)="removeFromCart()">-</button>
         <div class="quantity-text">{{ quantity }}</div>
-        <button class="quantity-button" (click)="addToCart(product!)">+</button>
+        <button class="quantity-button" (click)="addToCart()">+</button>
       </div>
-      <button class="add-to-cart-button" (click)="addToCart(product!)">Add to Cart</button>
+      <button class="add-to-cart-button" (click)="addToCart()">Add to Cart</button>
     </div>
   </div>
 </div>

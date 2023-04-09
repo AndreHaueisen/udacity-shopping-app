@@ -20,17 +20,17 @@ export class ProductGridItemComponent {
     this.cartProductsService.subscribeToSingleCartProduct(this.product!.id).subscribe((cartProduct) => {
       if (cartProduct) {
         this.quantity = cartProduct.quantity;
-      } else {  
+      } else {
         this.quantity = 0;
       }
     });
   }
 
-  addToCart(product: Product): void {
-    this.addToCartEmitter.emit(new CartProduct(product, this.quantity));
+  addToCart(): void {
+    this.addToCartEmitter.emit(new CartProduct(this.product!, this.quantity));
   }
 
-  removeFromCart(product: Product): void {
-    this.removeFromCartEmitter.emit(new CartProduct(product, this.quantity));
+  removeFromCart(): void {
+    this.removeFromCartEmitter.emit(new CartProduct(this.product!, this.quantity));
   }
 }

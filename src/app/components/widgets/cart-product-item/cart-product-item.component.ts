@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CartProduct } from 'src/app/models/cart-product';
+import { CartProductsService } from 'src/app/services/cart-products.service';
 
 @Component({
   selector: 'app-cart-product-item',
@@ -13,11 +14,11 @@ export class CartProductItemComponent {
 
   constructor() {}
 
-  addToCart(cartProduct: CartProduct): void {
-    this.addToCartEmitter.emit(new CartProduct(cartProduct.product, cartProduct.quantity + 1));
+  addToCart(): void {
+    this.addToCartEmitter.emit(this.cartProduct);
   }
 
-  removeFromCart(cartProduct: CartProduct): void {
-    this.removeFromCartEmitter.emit(new CartProduct(cartProduct.product, cartProduct.quantity - 1));
+  removeFromCart(): void {
+    this.removeFromCartEmitter.emit(this.cartProduct);
   }
 }

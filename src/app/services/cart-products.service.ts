@@ -32,12 +32,11 @@ export class CartProductsService {
       this.cartProducts[index] = cartProduct.increateQuantity();
     }
     this.cartProductsSubject.next(this.cartProducts);
-
   }
 
   removeFromCart(cartProduct: CartProduct): void {
     const index = this.cartProducts.findIndex((cp) => cp.product.id === cartProduct.product.id);
-   
+
     if (index !== -1) {
       if (this.cartProducts[index].quantity > 1) {
         this.cartProducts[index] = cartProduct.decreaseQuantity();
@@ -46,6 +45,5 @@ export class CartProductsService {
       }
     }
     this.cartProductsSubject.next(this.cartProducts);
-
   }
 }

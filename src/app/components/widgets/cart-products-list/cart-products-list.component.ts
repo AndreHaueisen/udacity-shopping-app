@@ -19,4 +19,13 @@ export class CartProductsListComponent {
       this.cartProducts = cartProducts;
     });
   }
+
+  onProductAdded(cartProduct: CartProduct) {
+    console.log('onProductAdded from list: ', cartProduct);
+    this.cartProductsService.addToCart(cartProduct);
+  }
+
+  onProductRemoved(cartProduct: CartProduct) {
+    this.cartProductsService.removeFromCart(cartProduct);
+  }
 }
