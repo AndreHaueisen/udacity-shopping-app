@@ -11,8 +11,8 @@
 
     <div class="product-actions">
       <div class="quantity-selector">
-        <button class="quantity-button" [disabled]="quantity < 1" (click)="removeFromCart()">-</button>
-        <div class="quantity-text">{{ quantity }}</div>
+        <button class="quantity-button" [disabled]="!cartProduct || cartProduct.quantity < 1" (click)="removeFromCart()">-</button>
+        <div class="quantity-text">{{ cartProduct?.quantity ?? 0 }}</div>
         <button class="quantity-button" (click)="addToCart()">+</button>
       </div>
       <button class="add-to-cart-button" (click)="addToCart()">Add to Cart</button>

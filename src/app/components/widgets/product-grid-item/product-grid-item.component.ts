@@ -12,25 +12,21 @@ export class ProductGridItemComponent {
   @Input() product: Product | undefined;
   @Output() addToCartEmitter = new EventEmitter<CartProduct>();
   @Output() removeFromCartEmitter = new EventEmitter<CartProduct>();
-  quantity: number = 0;
+  cartProduct: CartProduct | undefined;
 
   constructor(private cartProductsService: CartProductsService) {}
 
   ngOnInit(): void {
     this.cartProductsService.subscribeToSingleCartProduct(this.product!.id).subscribe((cartProduct) => {
-      if (cartProduct) {
-        this.quantity = cartProduct.quantity;
-      } else {
-        this.quantity = 0;
-      }
+      this.cartProduct = cartProduct;
     });
   }
 
   addToCart(): void {
-    this.addToCartEmitter.emit(new CartProduct(this.product!, this.quantity));
+    this.addToCartEmitter.emit(this.cartProduct ?? new CartProduct(this.product!));
   }
 
   removeFromCart(): void {
-    this.removeFromCartEmitter.emit(new CartProduct(this.product!, this.quantity));
+    this.removeFromCartEmitter.emit(this.cartProduct ?? new CartProduct(this.product!));
   }
 }
