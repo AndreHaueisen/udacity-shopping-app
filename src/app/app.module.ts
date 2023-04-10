@@ -13,6 +13,7 @@ import { CartProductsListComponent } from './components/widgets/cart-products-li
 import { CartProductItemComponent } from './components/widgets/cart-product-item/cart-product-item.component';
 import { PaymentInputFormComponent } from './components/widgets/payment-input-form/payment-input-form.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PurchaseSuccessComponent } from './components/screens/purchase-success/purchase-success.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     CartProductsListComponent,
     CartProductItemComponent,
     PaymentInputFormComponent,
+    PurchaseSuccessComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   providers: [],

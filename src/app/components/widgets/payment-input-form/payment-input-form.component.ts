@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -10,7 +11,7 @@ import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/fo
 export class PaymentInputFormComponent {
   inputForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private router: Router) {
     this.inputForm = this.formBuilder.group({
       cardHolder: ['', Validators.required],
       cardNumber: ['', Validators.required],
@@ -33,7 +34,7 @@ export class PaymentInputFormComponent {
 
   onSubmit() {
     if (this.inputForm.valid) {
-      console.log('Form submitted successfully', this.inputForm.value);
+      this.router.navigate(['/purchase-success']);
     }
   }
 }
