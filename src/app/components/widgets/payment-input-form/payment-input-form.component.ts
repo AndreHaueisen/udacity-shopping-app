@@ -1,7 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { AbstractControl, FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { PaymentInfoInput } from 'src/app/models/payment-info-input';
-
+import { Component } from '@angular/core';
+import { AbstractControl, FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -11,10 +9,13 @@ import { PaymentInfoInput } from 'src/app/models/payment-info-input';
 })
 export class PaymentInputFormComponent {
   inputForm: FormGroup;
-  paymentInfoForm = new PaymentInfoInput('', '', '');
 
   constructor(private formBuilder: FormBuilder) {
-    this.inputForm = this.formBuilder.record(this.paymentInfoForm);
+    this.inputForm = this.formBuilder.group({
+      cardHolder: ['', Validators.required],
+      cardNumber: ['', Validators.required],
+      address: ['', Validators.required]
+    });
   }
 
   get cardHolder(): AbstractControl | null{
