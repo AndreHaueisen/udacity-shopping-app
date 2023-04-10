@@ -19,7 +19,6 @@ export class ProductsGridComponent {
   }
 
   onProductAdded(cartProduct: CartProduct) {
-    console.log('onProductAdded', cartProduct);
     this.cartProductsService.addToCart(cartProduct);
   }
 

@@ -11,6 +11,8 @@ import { NavBarComponent } from './components/widgets/nav-bar/nav-bar.component'
 import { CartComponent } from './components/screens/cart/cart.component';
 import { CartProductsListComponent } from './components/widgets/cart-products-list/cart-products-list.component';
 import { CartProductItemComponent } from './components/widgets/cart-product-item/cart-product-item.component';
+import { PaymentInputFormComponent } from './components/widgets/payment-input-form/payment-input-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,8 +24,9 @@ import { CartProductItemComponent } from './components/widgets/cart-product-item
     CartComponent,
     CartProductsListComponent,
     CartProductItemComponent,
+    PaymentInputFormComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
