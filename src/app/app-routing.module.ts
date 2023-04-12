@@ -7,7 +7,7 @@ import { PurchaseSuccessComponent } from './components/screens/purchase-success/
 const routes: Routes = [
   { path: '', component: StoreFrontComponent },
   { path: 'cart', component: CartComponent },
-  { path: 'purchase-success', component: PurchaseSuccessComponent}
+  { path: 'purchase-success', component: PurchaseSuccessComponent },
 ];
 
 @NgModule({
