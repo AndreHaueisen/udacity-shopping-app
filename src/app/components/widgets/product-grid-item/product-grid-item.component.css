@@ -3,6 +3,7 @@
   border: 1px solid #ccc;
   border-radius: 6px;
   background-color: #fff;
+  cursor: pointer;
 }
 
 .product-image {

@@ -1,4 +1,4 @@
-<div class="product-item">
+<div class="product-item" [routerLink]="['/product', product?.id]">
   <img class="product-image" [src]="product?.url" [alt]="product?.name" width="100%" />
 
   <div class="product-info">
@@ -14,14 +14,14 @@
         <button
           class="quantity-button"
           [disabled]="!cartProduct || cartProduct.quantity < 1"
-          (click)="removeFromCart()"
+          (click)="removeFromCart(); $event.stopPropagation()"
         >
           -
         </button>
         <div class="quantity-text">{{ cartProduct?.quantity ?? 0 }}</div>
-        <button class="quantity-button" (click)="addToCart()">+</button>
+        <button class="quantity-button" (click)="addToCart(); $event.stopPropagation()">+</button>
       </div>
-      <button class="add-to-cart-button" (click)="addToCart()">Add to Cart</button>
+      <button class="add-to-cart-button" (click)="addToCart(); $event.stopPropagation()">Add to Cart</button>
     </div>
   </div>
 </div>

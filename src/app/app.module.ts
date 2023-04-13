@@ -15,6 +15,7 @@ import { PaymentInputFormComponent } from './components/widgets/payment-input-fo
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PurchaseSuccessComponent } from './components/screens/purchase-success/purchase-success.component';
 import { TotalPriceComponent } from './components/widgets/total-price/total-price.component';
+import { ProductDetailsComponent } from './components/screens/product-details/product-details.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { TotalPriceComponent } from './components/widgets/total-price/total-pric
     PaymentInputFormComponent,
     PurchaseSuccessComponent,
     TotalPriceComponent,
+    ProductDetailsComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule],
   providers: [],

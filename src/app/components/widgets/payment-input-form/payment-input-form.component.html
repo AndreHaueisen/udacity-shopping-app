@@ -4,7 +4,7 @@
   <form (ngSubmit)="onSubmit()" [formGroup]="inputForm">
     <div class="form-group">
       <label for="cardHolder">Full Name</label>
-      <input type="text" id="cardHolder" class="form-control" formControlName="cardHolder" />
+      <input type="text" id="cardHolder" class="form-control" formControlName="cardHolder" placeholder="Your full name"/>
       <div *ngIf="cardHolder?.invalid && (cardHolder?.dirty || cardHolder?.touched)" class="alert alert-danger">
         Full name is required.
       </div>
@@ -12,7 +12,7 @@
 
     <div class="form-group">
       <label for="cardNumber">Credit Card</label>
-      <input type="text" id="cardNumber" class="form-control" formControlName="cardNumber" />
+      <input type="text" id="cardNumber" class="form-control" formControlName="cardNumber" placeholder="16 digit cardit card number"/>
       <div *ngIf="cardNumber?.invalid && (cardNumber?.dirty || cardNumber?.touched)" class="alert alert-danger">
         Credit card number is required.
       </div>
@@ -20,7 +20,7 @@
 
     <div class="form-group">
       <label for="address">Address</label>
-      <input type="text" id="address" class="form-control" formControlName="address" />
+      <input type="text" id="address" class="form-control" formControlName="address" placeholder="Your address"/>
       <div *ngIf="address?.invalid && (address?.dirty || address?.touched)" class="alert alert-danger">
         Address is required.
       </div>

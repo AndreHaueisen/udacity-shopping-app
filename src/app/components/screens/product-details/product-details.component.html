@@ -1,0 +1,29 @@
+<div class="product-details-container">
+  <div class="product-image-container">
+    <img class="product-image" [src]="product?.url" [alt]="product?.name" />
+  </div>
+
+  <div class="product-info-container">
+    <h1 class="product-name">{{ product?.name }}</h1>
+    <div class="product-price">${{ product?.price }}</div>
+    <div class="product-description">{{ product?.description }}</div>
+
+    <div class="product-actions">
+      <div class="quantity-selector">
+        <button
+          class="quantity-button"
+          (click)="removeFromCart()"
+          [disabled]="!cartProduct || cartProduct.quantity < 1"
+        >
+          -
+        </button>
+        <div class="quantity-text">{{ cartProduct?.quantity ?? 0 }}</div>
+        <button class="quantity-button" (click)="addToCart()">+</button>
+      </div>
+      <button class="add-to-cart-button" (click)="addToCart()">Add to Cart</button>
+    </div>
+    
+    <a routerLink="/" class="back-button">Back to products list</a>
+
+  </div>
+</div>
