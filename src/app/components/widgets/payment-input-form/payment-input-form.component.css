@@ -5,9 +5,9 @@ body {
 
 .form-container {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  top: 128px;
+  right: 0;
+  width: 50%;
   background-color: #f8f9fa;
   border-top: 1px solid #dee2e6;
   padding: 1rem;
@@ -17,22 +17,7 @@ body {
   padding: 30px;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 2rem;
-}
-
-.app-total-price {
-  flex: 0 0 auto;
-  min-width: 400px;
-}
-
-form {
-  flex: 1 1 auto;
-  max-width: calc(100% - 400px - 1rem);
+  margin: 24px;
 }
 
 .form-title {
@@ -72,6 +57,10 @@ label {
   font-size: 12px;
   color: #a94442;
   margin-top: 5px;
+}
+
+app-total-price {
+  margin-right: 32px;
 }
 
 .btn {
