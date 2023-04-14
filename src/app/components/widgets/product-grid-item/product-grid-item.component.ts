@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from 'src/app/models/product';
 import { CartProduct } from 'src/app/models/cart-product';
-import { CartProductsService } from 'src/app/services/cart-products.service';
+import { CartProductsService } from 'src/app/services/cart-products/cart-products.service';
 
 @Component({
   selector: 'app-product-grid-item',

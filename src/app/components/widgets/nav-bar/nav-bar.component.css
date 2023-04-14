@@ -1,14 +1,32 @@
 .navigation {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  text-align: left;
   background-color: #33b5e5;
-  padding: 20px 200px 20px 200px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
 }
 
-a {
+.nav-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.nav-link {
   color: white;
   font-weight: bold;
   text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
 }
+
+.nav-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+

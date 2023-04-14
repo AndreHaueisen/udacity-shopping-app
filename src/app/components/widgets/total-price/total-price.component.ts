@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CartProductsService } from 'src/app/services/cart-products.service';
+import { CartProductsService } from 'src/app/services/cart-products/cart-products.service';
 
 @Component({
   selector: 'app-total-price',

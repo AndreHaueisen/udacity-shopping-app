@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { CartProduct } from 'src/app/models/cart-product';
 import { Product } from 'src/app/models/product';
-import { CartProductsService } from 'src/app/services/cart-products.service';
-import { ProductsService } from 'src/app/services/products.service';
+import { CartProductsService } from 'src/app/services/cart-products/cart-products.service';
+import { ProductsService } from 'src/app/services/products/products.service';
 
 @Component({
   selector: 'app-products-grid',
