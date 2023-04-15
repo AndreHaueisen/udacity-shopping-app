@@ -16,6 +16,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PurchaseSuccessComponent } from './components/screens/purchase-success/purchase-success.component';
 import { TotalPriceComponent } from './components/widgets/total-price/total-price.component';
 import { ProductDetailsComponent } from './components/screens/product-details/product-details.component';
+import { NotificationComponent } from './components/widgets/notification/notification.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -31,8 +34,17 @@ import { ProductDetailsComponent } from './components/screens/product-details/pr
     PurchaseSuccessComponent,
     TotalPriceComponent,
     ProductDetailsComponent,
+    NotificationComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, FormsModule, ReactiveFormsModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })

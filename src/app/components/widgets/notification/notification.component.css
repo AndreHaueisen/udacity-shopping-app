@@ -1,0 +1,23 @@
+mat-dialog-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  padding: 16px 16px 8px;
+}
+
+.align-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.blue-background-btn {
+  background-color: #2196f3;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+.blue-background-btn:hover {
+  background-color: #1976d2;
+}

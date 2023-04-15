@@ -14,10 +14,14 @@ export class ProductDetailsComponent {
   product: Product | undefined;
   cartProduct: CartProduct | undefined;
 
-  constructor(private route: ActivatedRoute, private productsService: ProductsService, private cartProductsService: CartProductsService) {}
+  constructor(
+    private route: ActivatedRoute,
+    private productsService: ProductsService,
+    private cartProductsService: CartProductsService,
+  ) {}
 
   ngOnInit(): void {
-    const id = parseInt(this.route.snapshot.paramMap.get('id')?? '0');
+    const id = parseInt(this.route.snapshot.paramMap.get('id') ?? '0');
     this.productsService.getSingleProduct(id).subscribe((product) => {
       this.product = product;
     });

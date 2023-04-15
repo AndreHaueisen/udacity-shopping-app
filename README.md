@@ -1,14 +1,14 @@
 # UdacityShoppingApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+This is a project for the Udacity Front End Nanodegree. The project is a shopping app that allows users to add items to a shopping cart and purchase them. The app is built using Angular.
+The products data is stored in [Click to view src/assets/data.json](src/assets/data.json) and is loaded into the app using the Angular HttpClient.
+The purchases are fictional and are not actually processed.
+Click a product to see its details. Add as many products as you like to your cart. 
+Click the cart tab to see your cart. When you are ready to purchase, input your name, credit card number, and address. The submit button will be activated once those fields are filled out with valid input. Click the submit button to complete your purchase. You will be redirected to a successful purchase page.
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
 ## Build
 

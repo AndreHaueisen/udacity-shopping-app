@@ -13,7 +13,10 @@ export class PaymentInputFormComponent {
   constructor(private formBuilder: FormBuilder, private router: Router) {
     this.inputForm = this.formBuilder.group({
       cardHolder: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(100)]],
-      cardNumber: ['', [Validators.required, Validators.minLength(16), Validators.maxLength(16), Validators.pattern('[0-9]*'),]],
+      cardNumber: [
+        '',
+        [Validators.required, Validators.minLength(16), Validators.maxLength(16), Validators.pattern('[0-9]*')],
+      ],
       address: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(100)]],
     });
   }
