@@ -12,7 +12,7 @@ import { CartComponent } from './components/screens/cart/cart.component';
 import { CartProductsListComponent } from './components/widgets/cart-products-list/cart-products-list.component';
 import { CartProductItemComponent } from './components/widgets/cart-product-item/cart-product-item.component';
 import { PaymentInputFormComponent } from './components/widgets/payment-input-form/payment-input-form.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { PurchaseSuccessComponent } from './components/screens/purchase-success/purchase-success.component';
 import { TotalPriceComponent } from './components/widgets/total-price/total-price.component';
 import { ProductDetailsComponent } from './components/screens/product-details/product-details.component';
@@ -41,7 +41,6 @@ import { MatDialogModule } from '@angular/material/dialog';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule,
     BrowserAnimationsModule,
     MatDialogModule,
   ],

@@ -1,21 +1,26 @@
 <div class="form-container">
   <h2 class="form-title">Payment Form</h2>
 
-  <form (ngSubmit)="onSubmit()" [formGroup]="inputForm">
+  <form (submit)="onSubmit(cardHolderRef, cardNumberRef, addressRef)">
     <div class="form-group">
       <label for="cardHolder">Full Name</label>
       <input
         type="text"
         id="cardHolder"
         class="form-control"
-        formControlName="cardHolder"
+        [(ngModel)]="cardHolder"
+        (ngModelChange)="onInputChange('cardHolder', cardHolder)"
+        name="cardHolder"
+        #cardHolderRef="ngModel"
         placeholder="Your full name"
+        minlength="3"
         maxlength="100"
+        required
       />
-      <div *ngIf="cardHolder?.invalid && (cardHolder?.dirty || cardHolder?.touched)" class="alert alert-danger">
-        <div *ngIf="cardHolder?.errors?.['required']">Full name is required.</div>
-        <div *ngIf="cardHolder?.errors?.['minlength']">Full name must be at least 3 characters long.</div>
-        <div *ngIf="cardHolder?.errors?.['maxlength']">Full name cannot be more than 100 characters long.</div>
+      <div *ngIf="cardHolderRef.invalid && (cardHolderRef.dirty || cardHolderRef.touched)" class="alert alert-danger">
+        <div *ngIf="cardHolderRef.errors?.['required']">Full name is required.</div>
+        <div *ngIf="cardHolderRef.errors?.['minlength']">Full name must be at least 3 characters long.</div>
+        <div *ngIf="cardHolderRef.errors?.['maxlength']">Full name cannot be more than 100 characters long.</div>
       </div>
     </div>
 
@@ -25,18 +30,22 @@
         type="text"
         id="cardNumber"
         class="form-control"
-        formControlName="cardNumber"
+        [(ngModel)]="cardNumber"
+        (ngModelChange)="onInputChange('cardNumber', cardNumber)"
+        name="cardNumber"
+        #cardNumberRef="ngModel"
         placeholder="16 digit cardit card number"
         minlength="16"
         maxlength="16"
         pattern="[0-9]*"
+        required
       />
-      <div *ngIf="cardNumber?.invalid && (cardNumber?.dirty || cardNumber?.touched)" class="alert alert-danger">
-        <div *ngIf="cardNumber?.errors?.['required']">Credit card number is required.</div>
-        <div *ngIf="cardNumber?.errors?.['minlength'] || cardNumber?.errors?.['maxlength']">
+      <div *ngIf="cardNumberRef.invalid && (cardNumberRef.dirty || cardNumberRef.touched)" class="alert alert-danger">
+        <div *ngIf="cardNumberRef.errors?.['required']">Credit card number is required.</div>
+        <div *ngIf="cardNumberRef.errors?.['minlength'] || cardNumberRef.errors?.['maxlength']">
           Credit card number must be 16 digits long.
         </div>
-        <div *ngIf="cardNumber?.errors?.['pattern']">Credit card number must contain only numbers.</div>
+        <div *ngIf="cardNumberRef.errors?.['pattern']">Credit card number must contain only numbers.</div>
       </div>
     </div>
 
@@ -46,20 +55,30 @@
         type="text"
         id="address"
         class="form-control"
-        formControlName="address"
+        [(ngModel)]="address"
+        (ngModelChange)="onInputChange('address', address)"
+        name="address"
+        #addressRef="ngModel"
         placeholder="Your address"
         minlength="10"
         maxlength="100"
+        required
       />
-      <div *ngIf="address?.invalid && (address?.dirty || address?.touched)" class="alert alert-danger">
-        <div *ngIf="address?.errors?.['required']">Address is required.</div>
-        <div *ngIf="address?.errors?.['minlength']">Address must be at least 10 characters long.</div>
-        <div *ngIf="address?.errors?.['maxlength']">Address cannot be more than 100 characters long.</div>
+      <div *ngIf="addressRef.invalid && (addressRef.dirty || addressRef.touched)" class="alert alert-danger">
+        <div *ngIf="addressRef.errors?.['required']">Address is required.</div>
+        <div *ngIf="addressRef.errors?.['minlength']">Address must be at least 10 characters long.</div>
+        <div *ngIf="addressRef.errors?.['maxlength']">Address cannot be more than 100 characters long.</div>
       </div>
     </div>
 
     <app-total-price></app-total-price>
 
-    <button type="submit" class="btn btn-primary" [disabled]="inputForm.invalid">Submit</button>
+    <button
+      type="submit"
+      class="btn btn-primary"
+      [disabled]="!cardHolderRef.valid || !cardNumberRef.valid || !addressRef.valid"
+    >
+      Submit
+    </button>
   </form>
 </div>
